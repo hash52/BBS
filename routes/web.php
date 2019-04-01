@@ -12,11 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('posts');
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('posts', 'PostContller');
+Route::resource('posts', 'PostContller', ['except' => ['show', 'edit', 'update', 'destroy']])->middleware('auth');
