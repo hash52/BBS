@@ -18,9 +18,6 @@
                     </div>
                     <div class="card-body">
                         <div>
-                            {{ $post->title }}
-                        </div>
-                        <div>
                             {{ $post->body }}
                         </div>
                         @if ($post->image_path)

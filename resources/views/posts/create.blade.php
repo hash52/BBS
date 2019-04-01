@@ -9,12 +9,6 @@
                 <form action="{{ action('PostContller@store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div>
-                        タイトル
-                    </div>
-                    <div class='col-md-8 form-group'>
-                        <input type="text" class="form-control" name="title" value="{{ old('title') }}" />
-                    </div>
-                    <div>
                         本文
                     </div>
                     <div class='col-md-8 form-group'>
@@ -27,6 +21,8 @@
                             <input type="file" name="image" style="display:none">
                         </span>
                     </label>
+                    
+                    <input type="hidden" name="user_id" value="{{ $user->id }}"/>
                     
                     <button type="submit" class="btn btn-danger"/>投稿</button>
     
