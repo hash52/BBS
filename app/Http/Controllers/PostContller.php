@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 
 class PostContller extends Controller
 {
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create', ['user' => Auth::user()]);
     }
     
     public function store(Request $request)

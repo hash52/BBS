@@ -4,6 +4,7 @@
     <table>
         @foreach($posts as $post)
             <tr>
+                <th>{{ $post->user->name }}</th>
                 <th>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->body }}</td>

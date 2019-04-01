@@ -9,6 +9,9 @@
         <div>投稿</div>
         <div><textarea name="body" value="{{ old('body') }}" rows="20"/></textarea></div>
         <div><input type="file" name="image"/></div>
+        
+        <input type="hidden" name="user_id" value="{{ $user->id }}"/>
+        
         <input type="submit" value="投稿"/>
     </form>
 @endsection
