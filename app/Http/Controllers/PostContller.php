@@ -33,4 +33,9 @@ class PostContller extends Controller
         
         return redirect('posts');
     }
+    
+    public function index(){
+        $posts = Post::latest()->get();
+        return view('posts.index', ['posts' => $posts]);
+    }
 }
